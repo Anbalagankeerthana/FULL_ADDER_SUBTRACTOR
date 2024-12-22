@@ -44,12 +44,48 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+```
+module exp4(sum,cout,a,b,cin);
+output sum;
+output cout;
+input a;
+input b;
+input cin;
+wire s1,c1,c2;
+xor(s1,a,b);
+and(c1,a,b);
+xor(sum,s1,cin);
+and(c2,s1,cin);
+or(cout,c2,c1);
+endmodule
+
+module exp4a(df,bo,a,b,bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
+Developed by : keerthana.A
+Register number :24900259
 
 **RTL Schematic**
+![exp4rtl1](https://github.com/user-attachments/assets/f2ed4660-fcb9-4137-8ed4-34284bc14899)
+
+![exp4rtl2](https://github.com/user-attachments/assets/161f1cc5-dd60-4957-b428-507f27053c78)
 
 **Output Timing Waveform**
+![exp4timing1](https://github.com/user-attachments/assets/2085350a-ccce-4006-a6f0-0c068fd9c51d)
+
+![exp4timing2](https://github.com/user-attachments/assets/077de06f-926e-4564-bf03-8768efae5ea9)
 
 **Result:**
 
